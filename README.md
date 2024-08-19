@@ -9,5 +9,5 @@ All credit goes to the `fourseven:scss` library for the work to create this pack
 ## Installation
 
 ```bash
-meteor add fowlio:scss
+meteor add 67726e:scss
 ```
