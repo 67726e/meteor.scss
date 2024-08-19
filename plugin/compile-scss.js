@@ -1,9 +1,11 @@
-import sass from 'node-sass';
+// import sass from 'node-sass';
+import sass from 'sass';
 import { promisify } from 'util';
 const path = Plugin.path;
 const fs = Plugin.fs;
 
 const compileSass = promisify(sass.render);
+// const compileSass = promisify(sass.render);
 const { includePaths } = _getConfig('scss-config.json');
 const _includePaths = Array.isArray(includePaths) ? includePaths : [];
 
@@ -265,6 +267,8 @@ class SassCompiler extends MultiFileCachingCompiler {
     let output;
     try {
       output = await compileSass(options);
+      // output = await sass.compileAsync(options);
+      // output = await sass.render(options);
     } catch (e) {
       inputFile.error({
         message: `Scss compiler error: ${e.formatted}\n`,

@@ -1,8 +1,8 @@
 Package.describe({
   summary: 'Style with attitude. Sass and SCSS support for Meteor.js.',
-  version: '4.17.0-rc.0',
-  git: 'https://github.com/Meteor-Community-Packages/meteor-scss.git',
-  name: 'fourseven:scss',
+  version: '0.0.1',
+  git: 'https://github.com/67726e/meteor-scss.git',
+  name: 'fowlio:scss',
 });
 
 Package.registerBuildPlugin({
@@ -13,7 +13,8 @@ Package.registerBuildPlugin({
   ],
   sources: ['plugin/compile-scss.js'],
   npmDependencies: {
-    "node-sass": '9.0.0',
+    // "node-sass": '9.0.0',
+    'sass': '1.77.8',
     "@babel/runtime": "7.24.5"
   }
 })
@@ -27,7 +28,7 @@ Package.onTest(function(api) {
   api.versionsFrom(['2.8.0', '3.0.1']);
   api.use(['test-helpers', 'tinytest']);
 
-  api.use(['fourseven:scss']);
+  api.use(['fowlio:scss']);
 
   // Tests for .scss
   api.addFiles([
